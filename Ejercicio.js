@@ -1,34 +1,57 @@
 function esNatural(num) {
-    // Devuelve true si el num es Natural
-    // Usa Recursividad
+    if (typeof num !== 'number')
+        return true;
+    return (num >= 0.0) && (Math.floor(num) === num) && num !== Infinity;
 }
+console.log(esNatural(95));
 
-function Colores(colores) {
-    // Aquellos colores negros cambiar su palabra a Black
-    // Devuelve el arreglo
+
+
+function Colores(colores, color, nuevoColor) {
+    while(colores.indexOf(color) != -1){
+        colores.splice(colores.indexOf(color), 1,
+nuevoColor);
+    }
 }
+var colores = ['Blanco', 'Negros', 'Rojo', 'Amarillo',
+'Negros', 'Verde']
+Colores(colores, 'Negros', 'Black');
+console.log(colores)
 
 var colores = ['Blanco', 'Negros', 'Rojo', 'Amarillo', 'Negros', 'Verde']
 
+
+
 function Filtrado(colores) {
-    // Del resultado de la funcion Colores() filtra aquellos colores llamados Black
-    // ejemplo ---> ['Blanco', 'Rojo', 'Amarillo', 'Verde']
+    const palabra = 'Black'
+    const filtrar = colores.filter(b => {
+        for(color of palabra){
+            if(b.indexOf(color) === -1)
+            return true;
+        }
+        return false;
+    });
+    return filtrar;
 }
+var colores = ['Blanco', 'Black', 'Rojo', 'Amarillo', 'Black', 'Verde']
+Filtrado(colores)
+console.log(Filtrado(colores))
+
+
 
 function Filtrar(personas){
-    // Filtrar aquellas personas que sean menores de edad, siendo mayor de edad a partir de los 18 años
-    // Mostrar arreglo
+    let filtrado = personas.filter(personas => personas.edad < 18);
+    return filtrado;
 }
-
 const personas = [
-
-    { nombre: 'Carlos', edad: 20},
-    { nombre: 'Esteban', edad: 15},
-    { nombre: 'Franco', edad: 12},
-    { nombre: 'Estela', edad: 19},
-    { nombre: 'Juan', edad: 10},
-    { nombre: 'Mirtha', edad: 17}
+    { nombre: 'Carlos', edad: 20},
+    { nombre: 'Esteban', edad: 15},
+    { nombre: 'Franco', edad: 12},
+    { nombre: 'Estela', edad: 19},
+    { nombre: 'Juan', edad: 10},
+    { nombre: 'Mirtha', edad: 17}
 ];
+
 
 
 
